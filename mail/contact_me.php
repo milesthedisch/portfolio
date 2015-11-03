@@ -1,5 +1,5 @@
 <?php
-date_default_timezone_set('Etc/UTC')
+date_default_timezone_set('Etc/UTC');
 require 'PHPMailerAutoload.php';
 // this is an ENV var 
 // Check for empty fields
