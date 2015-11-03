@@ -30,6 +30,7 @@ $mail->Password = getenv("GMAIL_PASSWORD");
 $mail->setFrom($_POST['email'], $_POST['name']);
 //Set an alternative reply-to address
 $mail->addReplyTo('replyto@example.com', 'First Last');
+$mail->Subject = $_POST['phone']
 //Set who the message is to be sent to
 $mail->addAddress(getenv("GMAIL_USERNAME"), 'Miles Disch');
 $mail->AltBody = 'This is a plain-text message body';
