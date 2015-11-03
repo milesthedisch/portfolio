@@ -14,7 +14,6 @@ if(empty($_POST['name'])  		||
    }
 	
 
-
 $mail = new PHPMailer;
 $mail->isSMTP();
 $mail->SMTPDebug = 2;
