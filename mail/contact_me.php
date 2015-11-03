@@ -33,7 +33,7 @@ $mail->addReplyTo('replyto@example.com', 'First Last');
 //Set who the message is to be sent to
 $mail->addAddress(getenv("GMAIL_USERNAME"), 'Miles Disch');
 $mail->AltBody = 'This is a plain-text message body';
-$mail->msgHTML($_POST['message'])
+$mail->msgHTML($_POST['message']);
 
 if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
