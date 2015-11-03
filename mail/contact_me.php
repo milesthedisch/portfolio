@@ -3,15 +3,15 @@ date_default_timezone_set('Etc/UTC')
 require 'PHPMailerAutoload.php';
 // this is an ENV var 
 // Check for empty fields
-if(empty($_POST['name'])  		||
-   empty($_POST['email']) 		||
-   empty($_POST['phone']) 		||
-   empty($_POST['message'])	||
-   !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL))
-   {
-	echo "No arguments Provided!";
-	return false;
-   }
+// if(empty($_POST['name'])  		||
+//    empty($_POST['email']) 		||
+//    empty($_POST['phone']) 		||
+//    empty($_POST['message'])	||
+//    !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL))
+//    {
+// 	echo "No arguments Provided!";
+// 	return false;
+//    }
 	
 
 $mail = new PHPMailer;
@@ -23,9 +23,9 @@ $mail->Port = 587;
 $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
 //Username to use for SMTP authentication - use full email address for gmail
-$mail->Username = getenv("GMAIL_USERNAME");
+$mail->Username = (string)(getenv("GMAIL_USERNAME"));
 //Password to use for SMTP authentication
-$mail->Password = getenv("GMAIL_PASSWORD")
+$mail->Password = (string)(getenv("GMAIL_PASSWORD"));
 //Set who the message is to be sent from
 $mail->setFrom($_POST['email'], $_POST['name']);
 //Set an alternative reply-to address
