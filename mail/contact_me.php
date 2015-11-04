@@ -29,7 +29,7 @@ $mail->Password = getenv("GMAIL_PASSWORD");
 //Set who the message is to be sent from
 $mail->setFrom($_POST['email'], $_POST['name']);
 //Set an alternative reply-to address
-$mail->addReplyTo(genenv("GMAIL_USERNAME"), 'Miles Disch');
+$mail->addReplyTo(getenv("GMAIL_USERNAME"), 'Miles Disch');
 
 $mail->Subject = $_POST['phone'];
 //Set who the message is to be sent to
